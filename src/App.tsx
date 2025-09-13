@@ -1,14 +1,11 @@
-import './App.css';
-import { TodoForm } from './components/todoForm';
-import Todolist from './components/showtodo'; 
+// App.tsx
+import ShowTodo from "./components/showtodo";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <TodoForm />
-      <Todolist />
+    <div style={{ padding: 20 }}>
+      <h1></h1>
+      <ShowTodo />
     </div>
   );
 }
-
-export default App;

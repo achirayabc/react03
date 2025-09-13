@@ -1,17 +1,16 @@
-import { todoStore } from "../store/todoStore";
+// components/RemoveTodo.tsx
+import { usetodoStore } from "../store/todoStore";
 
-export function Remove() {
-  const todos = todoStore((state) => state.todos);
-  const removeTodo = todoStore((state) => state.removeTodo);
+interface Props {
+  index: number;
+}
+
+export default function RemoveTodo({ index }: Props) {
+  const removeTodo = usetodoStore((state) => state.removeTodo);
 
   return (
-    <ul>
-      {todos.map((todo, index) => (
-        <li key={index}>
-          {todo}
-          <button onClick={() => removeTodo(index)}>ลบ</button>
-        </li>
-      ))}
-    </ul>
+    <button onClick={() => removeTodo(index)}>
+      ลบ
+    </button>
   );
 }

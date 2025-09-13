@@ -2,20 +2,20 @@ import { create } from "zustand";
 
 interface TodoInterface {
   message: string;
-  todos: string[];
+  todoList: string[];
   addTodo: (msg: string) => void;
   removeTodo: (index: number) => void;
   clearTodos: () => void;
 }
 
-export const todoStore = create<TodoInterface>((set) => ({
+export const  usetodoStore = create<TodoInterface>((set) => ({
   message: "Todo list",
-  todos: [],
+  todoList: [],
   addTodo: (msg: string) =>
-    set((state) => ({ todos: [...state.todos, msg] })),
+    set((state) => ({ todoList: [...state.todoList, msg] })),
 
   removeTodo: (index: number) =>
-    set((state) => ({ todos: state.todos.filter((_, i) => i !== index) })),
+    set((state) => ({ todoList: state.todoList.filter((_, i) => i !== index) })),
   
-  clearTodos: () => set({ todos: [] }),
+  clearTodos: () => set({ todoList: [] }),
 }));
